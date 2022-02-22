@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="flex justify-between">
+  <mat-radio-group (change)="open($event.value)">
+    <mat-radio-button value="/dashboard"
+                      class="pr-3"
+                      [checked]="currentPath === '/dashboard'"
+    >
+      Dashboard
+    </mat-radio-button>
+    <mat-radio-button value="/dynamic"
+                      [checked]="currentPath === '/dynamic'"
+    >
+      Dynamic Data
+    </mat-radio-button>
+  </mat-radio-group>
+  <h4>ZEO</h4>
+</mat-toolbar>

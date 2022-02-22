@@ -1,0 +1,28 @@
+<div class="mt-4 h-5/6">
+  <app-charts [data]="data"
+              [updateTrigger$]="startUpdate$"
+              yPostfix="$"
+              title="Cryptocurrency"
+              [dataUpdating]="dataUpdating"
+              containerId="cryptocurrency"
+              type="dynamic"
+  ></app-charts>
+
+  <div class="flex justify-center">
+    <button mat-flat-button
+            color="primary"
+            class="right-3"
+            (click)="startDataStream()"
+    >
+      Start
+    </button>
+
+    <button mat-flat-button
+            color="primary"
+            (click)="stopDataStream()"
+    >
+      Stop
+    </button>
+  </div>
+</div>
+

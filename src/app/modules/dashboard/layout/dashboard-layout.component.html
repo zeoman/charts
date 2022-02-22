@@ -1,0 +1,43 @@
+<div class="dashboard-charts mt-4 flex" *ngIf="mode === 'separate'">
+  <div class="dashboard-charts-column">
+    <app-charts [data]="dataTemp"
+                title="Temperature"
+                yPostfix="°C"
+                containerId="temp"
+                type="range"
+    ></app-charts>
+    <app-charts [data]="dataHumidity"
+                title="Humidity"
+                yPostfix="%"
+                containerId="humidity"
+                type="range"
+    ></app-charts>
+  </div>
+  <div class="dashboard-charts-column">
+    <app-charts [data]="dataTemp2"
+                title="Temperature2"
+                yPostfix="°C"
+                containerId="temp2"
+                type="range"
+    ></app-charts>
+    <app-charts [data]="dataHumidity2"
+                title="Humidity2"
+                yPostfix="%"
+                containerId="humidity2"
+                type="range"
+    ></app-charts>
+  </div>
+
+</div>
+<div class="dashboard-charts" *ngIf="mode === 'combined'">
+  <app-charts [data]="dataCombined"
+              title="Combined"
+              containerId="combined"
+              type="range"
+  ></app-charts>
+</div>
+<div class="flex justify-center mt-8">
+  <button mat-flat-button color="primary" (click)="switchMode()">
+    Switch to {{mode === 'combined' ? 'separate' : 'combined'}} mode
+  </button>
+</div>
