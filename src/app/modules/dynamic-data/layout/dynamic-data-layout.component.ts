@@ -89,6 +89,7 @@ export class DynamicDataLayoutComponent implements OnInit {
             }
             // Making and adding fake date
             this.currentDate = Helper.addHours(this.currentDate, 1);
+            // TODO Compare last values and sort only if we need it
             this.data[0].data?.push([this.currentDate, values[0]]);
             this.data[0].data = [...this.data[0].data.sort(Helper.sortDate)]
 
